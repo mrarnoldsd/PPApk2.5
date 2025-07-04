@@ -3,13 +3,13 @@ workflows:
     name: PrisonPay Build
     max_build_duration: 30
     environment:
-      vars:
-        PACKAGE_NAME: "com.prisonpay.app"
       java: 17
     scripts:
-      - echo "🔓 Setting gradlew.sh permission"
+      - echo "🔓 Ensure gradlew.sh is executable"
       - chmod +x gradlew.sh
-      - echo "🧹 Cleaning project..."
+      - echo "📂 Listing files in root for debugging"
+      - ls -R .
+      - echo "🧹 Cleaning the project"
       - ./gradlew.sh clean
       - echo "🏗️ Building APK..."
       - ./gradlew.sh assembleDebug
@@ -19,6 +19,3 @@ workflows:
       email:
         recipients:
           - mrarnoldsd@gmail.com
-        notify:
-          success: true
-          failure: true
