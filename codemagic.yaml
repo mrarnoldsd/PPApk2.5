@@ -4,18 +4,14 @@ workflows:
     max_build_duration: 30
     environment:
       java: 17
+      android: sdk
     scripts:
-      - echo "📦 Rebuilding gradle-wrapper.jar from gradle-wrapper.properties..."
-      - mkdir -p gradle/wrapper
-      - curl -L https://services.gradle.org/distributions/gradle-8.6-bin.zip -o gradle.zip
-      - unzip -q gradle.zip
-      - cp gradle-8.6/lib/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
-      - echo "🔓 Ensure gradlew.sh is executable"
-      - chmod +x gradlew.sh
-      - echo "🧹 Cleaning the project"
-      - ./gradlew.sh clean
+      - echo "📂 Debugging file structure:"
+      - ls -R .
+      - echo "🧹 Cleaning the project..."
+      - gradle clean
       - echo "🏗️ Building APK..."
-      - ./gradlew.sh assembleDebug
+      - gradle assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
     publishing:
