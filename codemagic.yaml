@@ -7,7 +7,7 @@ workflows:
     scripts:
       - echo "📦 Rebuilding gradle-wrapper.jar from gradle-wrapper.properties..."
       - mkdir -p gradle/wrapper
-      - curl -s https://services.gradle.org/distributions/gradle-8.6-bin.zip -o gradle.zip
+      - curl -L https://services.gradle.org/distributions/gradle-8.6-bin.zip -o gradle.zip
       - unzip -q gradle.zip
       - cp gradle-8.6/lib/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
       - echo "🔓 Ensure gradlew.sh is executable"
