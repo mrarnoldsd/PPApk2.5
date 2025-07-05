@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/brick_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:textColor="#00FF00"
+        android:textSize="32sp"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:text="0" />
+
+    <GridLayout
+        android:id="@+id/buttonGrid"
+        android:layout_below="@id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:rowCount="5"
+        android:columnCount="4">
+
+        <!-- Row 1 -->
+        <Button android:text="7" style="@style/CalcButton" />
+        <Button android:text="8" style="@style/CalcButton" />
+        <Button android:text="9" style="@style/CalcButton" />
+        <Button android:text="÷" style="@style/CalcButton" />
+
+        <!-- Row 2 -->
+        <Button android:text="4" style="@style/CalcButton" />
+        <Button android:text="5" style="@style/CalcButton" />
+        <Button android:text="6" style="@style/CalcButton" />
+        <Button android:text="×" style="@style/CalcButton" />
+
+        <!-- Row 3 -->
+        <Button android:text="1" style="@style/CalcButton" />
+        <Button android:text="2" style="@style/CalcButton" />
+        <Button android:text="3" style="@style/CalcButton" />
+        <Button android:text="−" style="@style/CalcButton" />
+
+        <!-- Row 4 -->
+        <Button android:text="C" style="@style/CalcButton" />
+        <Button android:text="0" style="@style/CalcButton" />
+        <Button android:text="=" style="@style/CalcButton" />
+        <Button android:text="+" style="@style/CalcButton" />
+    </GridLayout>
+</RelativeLayout>
