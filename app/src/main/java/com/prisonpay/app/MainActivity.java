@@ -1,7 +1,9 @@
 package com.prisonpay.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,17 +30,16 @@ public class MainActivity extends AppCompatActivity {
         stashRecyclerView.setAdapter(stashAdapter);
 
         inventoryManager = new InventoryManager();
-
         fetchStashHouse();
+
+        // 🔥 Navigate to Sales screen
+        Button btnSales = findViewById(R.id.btn_open_sales);
+        btnSales.setOnClickListener(v -> {
+            startActivity(new Intent(this, SalesActivity.class));
+        });
     }
 
     private void fetchStashHouse() {
         inventoryManager.getInventory(products -> {
             if (products != null && !products.isEmpty()) {
-                stashAdapter.setProductList(products);
-            } else {
-                Toast.makeText(this, "Ain’t no Work in the Stash House 🧱", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-}
+                stashAdapter.set
