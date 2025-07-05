@@ -17,6 +17,13 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
+    <!-- Splash Theme -->
+    <style name="Theme.PrisonPay.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background_v2</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+
     <!-- Style for calculator buttons -->
     <style name="CalcButton">
         <item name="android:layout_width">0dp</item>
