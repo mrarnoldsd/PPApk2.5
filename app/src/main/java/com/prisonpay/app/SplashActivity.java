@@ -7,18 +7,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DURATION = 2500; // 2.5 seconds
+    private static final int SPLASH_DISPLAY_LENGTH = 2000; // 2 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // Transition to CalculatorActivity after delay
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, CalculatorActivity.class);
-            startActivity(intent);
+            // Start the calculator unlock screen
+            Intent mainIntent = new Intent(SplashActivity.this, CalculatorActivity.class);
+            startActivity(mainIntent);
             finish();
-        }, SPLASH_DURATION);
+        }, SPLASH_DISPLAY_LENGTH);
     }
 }
