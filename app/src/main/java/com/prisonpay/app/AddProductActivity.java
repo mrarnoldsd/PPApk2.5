@@ -43,7 +43,8 @@ public class AddProductActivity extends AppCompatActivity {
                 double price = Double.parseDouble(priceStr);
                 int stock = Integer.parseInt(stockStr);
 
-                Product newPack = new Product(name, cost, price, stock);
+                // Pass `null` as the ID — InventoryManager will generate it
+                Product newPack = new Product(null, name, cost, price, stock);
                 inventoryManager.addProduct(newPack);
                 Toast.makeText(this, "New Work on Deck 🚚", Toast.LENGTH_SHORT).show();
                 finish();
