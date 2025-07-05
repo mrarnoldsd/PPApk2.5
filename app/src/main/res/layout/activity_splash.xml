@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background_v2">
+    android:background="@drawable/splash_background_v2">  <!-- Your custom image -->
 
     <ImageView
         android:id="@+id/splash_logo"
@@ -11,4 +11,5 @@
         android:layout_centerInParent="true"
         android:src="@mipmap/ic_launcher_round"
         android:contentDescription="PrisonPay Logo" />
+
 </RelativeLayout>
