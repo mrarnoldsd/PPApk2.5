@@ -2,7 +2,6 @@ package com.prisonpay.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -42,4 +41,10 @@ public class MainActivity extends AppCompatActivity {
     private void fetchStashHouse() {
         inventoryManager.getInventory(products -> {
             if (products != null && !products.isEmpty()) {
-                stashAdapter.set
+                stashAdapter.setProductList(products);
+            } else {
+                Toast.makeText(this, "Ain’t no Work in the Stash House 🧱", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+            }
