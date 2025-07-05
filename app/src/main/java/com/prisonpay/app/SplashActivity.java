@@ -2,37 +2,79 @@ package com.prisonpay.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.widget.ImageView;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashActivity extends AppCompatActivity {
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
-    private static final int SPLASH_TIME = 4000; // 4 seconds
+public class CalculatorActivity extends AppCompatActivity {
+
+    private TextView display;
+    private StringBuilder currentExpression = new StringBuilder();
+    private final String unlockCode = "187/69";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_calculator);
 
-        ImageView jailBars = findViewById(R.id.jailBars);
-        ImageView logo = findViewById(R.id.logoImage);
+        display = findViewById(R.id.calculator_display);
 
-        Animation barsAnim = AnimationUtils.loadAnimation(this, R.anim.jail_slide_close);
-        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.logo_fade_in);
+        int[] buttonIds = {
+                R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4,
+                R.id.btn_5, R.id.btn_6, R.id.btn_7, R.id.btn_8, R.id.btn_9,
+                R.id.btn_plus, R.id.btn_minus, R.id.btn_multiply, R.id.btn_divide,
+                R.id.btn_dot, R.id.btn_clear, R.id.btn_equals
+        };
 
-        jailBars.startAnimation(barsAnim);
+        for (int id : buttonIds) {
+            Button button = findViewById(id);
+            button.setOnClickListener(this::onButtonClick);
+        }
+    }
 
-        new Handler().postDelayed(() -> {
-            logo.startAnimation(fadeIn);
-            logo.setVisibility(ImageView.VISIBLE);
-        }, 2000); // Delay before fade
+    private void onButtonClick(View v) {
+        Button button = (Button) v;
+        String input = button.getText().toString();
 
-        new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, CalculatorActivity.class));
+        switch (input) {
+            case "C":
+                currentExpression.setLength(0);
+                display.setText("");
+                break;
+            case "=":
+                evaluateExpression();
+                break;
+            default:
+                currentExpression.append(input);
+                display.setText(currentExpression.toString());
+        }
+    }
+
+    private void evaluateExpression() {
+        String expression = currentExpression.toString().replace("×", "*").replace("÷", "/");
+
+        // Check unlock code
+        if (expression.equals(unlockCode)) {
+            startActivity(new Intent(this, MainActivity.class));
             finish();
-        }, SPLASH_TIME);
+            return;
+        }
+
+        // Evaluate normally
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
+        try {
+            Object result = engine.eval(expression);
+            display.setText(result.toString());
+            currentExpression.setLength(0);
+            currentExpression.append(result.toString());
+        } catch (ScriptException e) {
+            display.setText("Error");
+            currentExpression.setLength(0);
+        }
     }
 }
