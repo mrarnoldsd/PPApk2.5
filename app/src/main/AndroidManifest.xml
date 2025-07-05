@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.prisonpay.app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrisonPay">
 
-        <!-- Splash screen is the launcher -->
+        <!-- 👇 Splash screen launcher -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -21,12 +20,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Main app activity after unlocking -->
+        <!-- 🔢 Calculator screen (locked gate) -->
+        <activity android:name=".CalculatorActivity" />
+
+        <!-- 🏪 Main app -->
         <activity android:name=".MainActivity" />
 
-        <!-- Calculator screen that unlocks main app -->
-        <activity android:name=".CalculatorActivity" />
-        
     </application>
 
 </manifest>
