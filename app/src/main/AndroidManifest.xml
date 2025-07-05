@@ -10,15 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrisonPay">
 
-        <activity android:name=".SalesActivity" />
-
-        <activity android:name=".MainActivity"
+        <!-- 🔒 Launches splash screen first -->
+        <activity android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- 🔢 Calculator gate -->
+        <activity android:name=".CalculatorActivity" />
+
+        <!-- 📦 Main app screen (inventory) -->
+        <activity android:name=".MainActivity" />
+
+        <!-- 🧾 Sales screen -->
+        <activity android:name=".SalesActivity" />
+
+        <!-- ➕ Add new work -->
+        <activity android:name=".AddProductActivity" />
 
     </application>
 
