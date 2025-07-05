@@ -1,3 +1,4 @@
+// 📍 File: app/src/main/java/com/prisonpay/app/CalculatorActivity.java
 package com.prisonpay.app;
 
 import android.content.Intent;
@@ -6,10 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 public class CalculatorActivity extends AppCompatActivity {
 
@@ -65,16 +62,34 @@ public class CalculatorActivity extends AppCompatActivity {
             return;
         }
 
-        // Evaluate normally
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try {
-            Object result = engine.eval(expression);
-            display.setText(result.toString());
+            double result = simpleEval(expression);
+            display.setText(String.valueOf(result));
             currentExpression.setLength(0);
-            currentExpression.append(result.toString());
-        } catch (ScriptException e) {
+            currentExpression.append(result);
+        } catch (Exception e) {
             display.setText("Error");
             currentExpression.setLength(0);
         }
+    }
+
+    // Basic math evaluator (handles +, -, *, /)
+    private double simpleEval(String expr) {
+        String[] tokens = expr.split("(?<=[-+*/])|(?=[-+*/])");
+        double result = Double.parseDouble(tokens[0].trim());
+
+        for (int i = 1; i < tokens.length; i += 2) {
+            String op = tokens[i].trim();
+            double next = Double.parseDouble(tokens[i + 1].trim());
+
+            switch (op) {
+                case "+": result += next; break;
+                case "-": result -= next; break;
+                case "*": result *= next; break;
+                case "/": result /= next; break;
+                default: throw new RuntimeException("Invalid operator");
+            }
+        }
+        return result;
     }
 }
