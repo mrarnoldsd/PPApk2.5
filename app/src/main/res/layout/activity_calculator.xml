@@ -1,57 +1,124 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/calculator_container"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:padding="16dp"
-android:background="@drawable/brick_background"
-tools:context=".CalculatorActivity">
-
-<TextView
-    android:id="@+id/calculator_display"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="0"
-    android:textSize="36sp"
-    android:textColor="@android:color/white"
-    android:gravity="end"
-    android:background="#AA000000"
-    android:padding="16dp"
-    android:layout_marginBottom="16dp" />
+    android:layout_height="match_parent"
+    android:background="@drawable/red_brick_background"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-<GridLayout
-    android:id="@+id/calculator_grid"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:columnCount="4"
-    android:rowCount="5"
-    android:layout_gravity="center"
-    android:layout_marginBottom="16dp">
+    <TextView
+        android:id="@+id/calculator_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="36sp"
+        android:gravity="end"
+        android:background="#AA000000"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-black" />
 
-    <!-- Row 1 -->
-    <Button android:text="7" style="@style/CalcButton" />
-    <Button android:text="8" style="@style/CalcButton" />
-    <Button android:text="9" style="@style/CalcButton" />
-    <Button android:text="÷" style="@style/CalcButton" />
+    <GridLayout
+        android:id="@+id/calculator_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true">
 
-    <!-- Row 2 -->
-    <Button android:text="4" style="@style/CalcButton" />
-    <Button android:text="5" style="@style/CalcButton" />
-    <Button android:text="6" style="@style/CalcButton" />
-    <Button android:text="×" style="@style/CalcButton" />
+        <!-- Row 1 -->
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="7"
+            android:onClick="onCalculatorButtonClick" />
 
-    <!-- Row 3 -->
-    <Button android:text="1" style="@style/CalcButton" />
-    <Button android:text="2" style="@style/CalcButton" />
-    <Button android:text="3" style="@style/CalcButton" />
-    <Button android:text="-" style="@style/CalcButton" />
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="8"
+            android:onClick="onCalculatorButtonClick" />
 
-    <!-- Row 4 -->
-    <Button android:text="0" style="@style/CalcButton" />
-    <Button android:text="C" style="@style/CalcButton" />
-    <Button android:text="=" style="@style/CalcButton" />
-    <Button android:text="+" style="@style/CalcButton" />
-</GridLayout>
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="9"
+            android:onClick="onCalculatorButtonClick" />
 
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="÷"
+            android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 2 -->
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="4"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="5"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="6"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="×"
+            android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 3 -->
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="1"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="2"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="3"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="-"
+            android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 4 -->
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="0"
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="."
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="="
+            android:onClick="onCalculatorButtonClick" />
+
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="+"
+            android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 5 -->
+        <Button
+            style="@style/UrbanCalcButton"
+            android:text="C"
+            android:layout_columnSpan="4"
+            android:onClick="onCalculatorButtonClick" />
+
+    </GridLayout>
 </LinearLayout>
