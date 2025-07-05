@@ -1,3 +1,4 @@
+// 📄 File: app/src/main/java/com/prisonpay/app/AddProductActivity.java
 package com.prisonpay.app;
 
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class AddProductActivity extends AppCompatActivity {
                 double price = Double.parseDouble(priceStr);
                 int stock = Integer.parseInt(stockStr);
 
-                // Pass `null` as the ID — InventoryManager will generate it
+                // 👇 Fix: include null as the first argument for ID
                 Product newPack = new Product(null, name, cost, price, stock);
                 inventoryManager.addProduct(newPack);
                 Toast.makeText(this, "New Work on Deck 🚚", Toast.LENGTH_SHORT).show();
