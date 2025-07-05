@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/brick_background"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Calculator Display -->
+    <!-- 🔐 Display for user input -->
     <TextView
         android:id="@+id/calculator_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#222222"
-        android:textColor="#FFEB3B"
-        android:textSize="32sp"
-        android:padding="16dp"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
         android:gravity="end"
-        android:text=""/>
+        android:padding="12dp"
+        android:background="#88000000"
+        android:textStyle="bold"
+        android:fontFamily="monospace" />
 
-    <!-- Button Grid -->
+    <!-- 🔢 Calculator keypad -->
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:columnCount="4"
-        android:rowCount="5"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnCount="4">
 
         <!-- Row 1 -->
         <Button style="@style/UrbanCalcButton" android:text="7" android:onClick="onCalculatorButtonClick" />
@@ -51,5 +50,4 @@
         <Button style="@style/UrbanCalcButton" android:text="=" android:onClick="onCalculatorButtonClick" />
         <Button style="@style/UrbanCalcButton" android:text="+" android:onClick="onCalculatorButtonClick" />
     </GridLayout>
-
 </LinearLayout>
