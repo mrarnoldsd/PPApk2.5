@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/brick_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="🚚 New Work on Deck"
+            android:textSize="22sp"
+            android:textColor="#FFEB3B"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/input_name"
+            android:hint="Work Name"
+            android:textColorHint="#cccccc"
+            android:textColor="#ffffff"
+            android:background="#222222"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/input_cost"
+            android:hint="Plug Cost"
+            android:inputType="numberDecimal"
+            android:textColorHint="#cccccc"
+            android:textColor="#ffffff"
+            android:background="#222222"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/input_price"
+            android:hint="Trap Price"
+            android:inputType="numberDecimal"
+            android:textColorHint="#cccccc"
+            android:textColor="#ffffff"
+            android:background="#222222"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/input_stock"
+            android:hint="Qty in Safe"
+            android:inputType="number"
+            android:textColorHint="#cccccc"
+            android:textColor="#ffffff"
+            android:background="#222222"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_submit_product"
+            android:text="Move This Pack 🚚"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#FFEB3B"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
