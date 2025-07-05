@@ -14,6 +14,15 @@ import java.util.List;
 public class StashAdapter extends RecyclerView.Adapter<StashAdapter.StashViewHolder> {
 
     private List<Product> productList = new ArrayList<>();
+    private OnItemClickListener clickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Product product);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.clickListener = listener;
+    }
 
     public void setProductList(List<Product> list) {
         this.productList = list;
@@ -34,6 +43,12 @@ public class StashAdapter extends RecyclerView.Adapter<StashAdapter.StashViewHol
         holder.name.setText("💼 " + product.getName());
         holder.price.setText("💸 $" + product.getPrice());
         holder.stock.setText("🔐 Left in the Safe: " + product.getStock());
+
+        holder.itemView.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onItemClick(product);
+            }
+        });
     }
 
     @Override
