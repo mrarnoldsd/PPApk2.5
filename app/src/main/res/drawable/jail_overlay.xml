@@ -8,7 +8,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/jail_bars" />
+            android:src="@drawable/jail_bars_bg" />
     </item>
 
 </layer-list>
