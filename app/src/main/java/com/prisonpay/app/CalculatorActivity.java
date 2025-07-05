@@ -1,82 +1,55 @@
 package com.prisonpay.app;
 
-import android.content.Intent; import android.os.Bundle; import android.view.View; import android.widget.Button; import android.widget.TextView; import android.widget.Toast;
-
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CalculatorActivity extends AppCompatActivity {
 
-private TextView inputText;
-private StringBuilder currentInput = new StringBuilder();
-private final String unlockCode = "187/69=";
+    private TextView display;
+    private String input = "";
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_calculator);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calculator);
 
-    inputText = findViewById(R.id.calculator_display);
-}
+        display = findViewById(R.id.calculatorDisplay);
 
-public void onCalculatorButtonClick(View view) {
-    Button button = (Button) view;
-    String value = button.getText().toString();
+        // Digits and operators
+        int[] buttonIds = {
+                R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
+                R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9,
+                R.id.btnDivide, R.id.btnClear
+        };
 
-    if (value.equals("C")) {
-        currentInput.setLength(0);
-    } else {
-        currentInput.append(value);
-    }
+        for (int id : buttonIds) {
+            Button btn = findViewById(id);
+            btn.setOnClickListener(v -> {
+                String value = btn.getText().toString();
+                if (value.equals("C")) {
+                    input = "";
+                } else {
+                    input += value;
+                }
+                display.setText(input);
+            });
+        }
 
-    inputText.setText(currentInput.toString());
-
-    if (currentInput.toString().equals(unlockCode)) {
-        Toast.makeText(this, "Access Granted", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
-}
-
-}
-
-
-
-import android.content.Intent; import android.os.Bundle; import android.view.View; import android.widget.Button; import android.widget.TextView; import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class CalculatorActivity extends AppCompatActivity {
-
-private TextView inputText;
-private StringBuilder currentInput = new StringBuilder();
-private final String unlockCode = "187/69=";
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_calculator);
-
-    inputText = findViewById(R.id.calculator_display);
-}
-
-public void onCalculatorButtonClick(View view) {
-    Button button = (Button) view;
-    String value = button.getText().toString();
-
-    if (value.equals("C")) {
-        currentInput.setLength(0);
-    } else {
-        currentInput.append(value);
-    }
-
-    inputText.setText(currentInput.toString());
-
-    if (currentInput.toString().equals(unlockCode)) {
-        Toast.makeText(this, "Access Granted", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
+        Button equals = findViewById(R.id.btnEquals);
+        equals.setOnClickListener(v -> {
+            if (input.equals("187÷69")) {
+                Intent intent = new Intent(CalculatorActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Nah, that ain't it.", Toast.LENGTH_SHORT).show();
+                input = "";
+                display.setText("");
+            }
+        });
     }
 }
-
-}
-
