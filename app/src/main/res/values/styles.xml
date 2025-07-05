@@ -12,10 +12,9 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
-    <!-- 🚪 Splash Screen Theme -->
+    <!-- ✨ Splash Screen Theme -->
     <style name="Theme.PrisonPay.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background_v2</item>
-        <item name="android:statusBarColor" tools:targetApi="l">#000000</item>
     </style>
 
     <!-- 🔥 Urban Style Calculator Buttons -->
@@ -34,4 +33,6 @@
         <item name="strokeColor">#FF9800</item>
     </style>
 
+    <!-- 👊 Alias for compatibility -->
+    <style name="CalcButton" parent="UrbanCalcButton" />
 </resources>
