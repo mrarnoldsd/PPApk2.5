@@ -1,15 +1,31 @@
-<!-- styles.xml -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Urban Trap Button Style -->
-    <style name="UrbanCalcButton" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/urban_button_bg</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">sans-serif-black</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:letterSpacing">0.05</item>
-        <item name="android:textAllCaps">true</item>
+    <!-- 🔐 Base App Theme -->
+    <style name="Theme.PrisonPay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#1c1c1c</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="colorSecondary">#ff9800</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:windowBackground">@drawable/red_brick_background</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <!-- 🔥 Custom Style for Calculator Buttons -->
+    <style name="UrbanCalcButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:backgroundTint">#222222</item>
+        <item name="android:textColor">#FFEB3B</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">#FF9800</item>
     </style>
 
 </resources>
