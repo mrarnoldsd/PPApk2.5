@@ -10,8 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrisonPay">
 
+        <!-- 🔐 Main business logic screen (protected, opens after calculator unlock) -->
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- 🔢 Calculator unlock screen -->
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="false" />
+
+        <!-- 🚪 First screen: splash with jail animation -->
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
