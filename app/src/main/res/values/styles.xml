@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 🔥 PrisonPay App Theme -->
+    <!-- Base app theme -->
     <style name="Theme.PrisonPay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary branding colors -->
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryVariant">#1c1c1c</item>
         <item name="colorOnPrimary">#ffffff</item>
         <item name="colorSecondary">#ff9800</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- App background -->
         <item name="android:windowBackground">@drawable/brick_background</item>
-    </style>
 
-    <!-- 🔢 Calculator Button Style -->
-    <style name="CalcButton">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">80dp</item>
-        <item name="android:layout_columnWeight">1</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:backgroundTint">#FF9800</item>
-        <item name="android:textColor">#000000</item>
-        <item name="android:layout_margin">4dp</item>
-    </style>
-
-</resources>
+        <!-- Customize appearance -->
+        <item name="android:textColor">#ffffff</item>
+        <item name
