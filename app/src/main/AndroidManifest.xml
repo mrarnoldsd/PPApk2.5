@@ -4,8 +4,29 @@
 
     <application
         android:allowBackup="true"
-        android:label="PrisonPay"
         android:icon="@mipmap/ic_launcher"
+        android:label="PrisonPay"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PrisonPay
+        android:theme="@style/Theme.PrisonPay">
+
+        <!-- Splash screen is the launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PrisonPay.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main app activity after unlocking -->
+        <activity android:name=".MainActivity" />
+
+        <!-- Calculator screen that unlocks main app -->
+        <activity android:name=".CalculatorActivity" />
+        
+    </application>
+
+</manifest>
