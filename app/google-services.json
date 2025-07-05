@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "908684701692",
+    "project_id": "prisonpay-83c92",
+    "storage_bucket": "prisonpay-83c92.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908684701692:android:fdb548cc055f645061cc79",
+        "android_client_info": {
+          "package_name": "com.prisonpay.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARH1OXYrcvjk5Awqn4dps5y_wCGtESaik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
