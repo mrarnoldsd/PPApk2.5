@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calculator_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/brick_background"
     tools:context=".CalculatorActivity">
 
-    <!-- Logo on top -->
-    <ImageView
-        android:id="@+id/prisonpay_logo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/prisonpay_logo"
-        android:contentDescription="PrisonPay logo" />
-
-    <!-- Calculator Display -->
+    <!-- Display Area -->
     <TextView
         android:id="@+id/calculator_display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/prisonpay_logo"
-        android:layout_margin="16dp"
-        android:background="@android:color/black"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:gravity="end|center_vertical"
         android:padding="16dp"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:text=""/>
+        android:textSize="32sp"
+        android:textColor="#ffffff"
+        android:text="0"
+        android:background="#AA000000" />
 
-    <!-- Jail Bars Overlay (optional) -->
+    <!-- Jail Bars Overlay (optional aesthetic layer) -->
     <ImageView
-        android:id="@+id/jail_overlay"
+        android:id="@+id/jail_bars_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/jail_bars_bg"
@@ -42,6 +33,48 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <!-- You can add calculator buttons below here... -->
-    
+    <!-- Calculator Keypad -->
+    <GridLayout
+        android:id="@+id/calculator_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:columnCount="4"
+        android:padding="12dp">
+
+        <!-- Row 1 -->
+        <Button android:id="@+id/btn_7" android:text="7" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_8" android:text="8" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_9" android:text="9" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_divide" android:text="/" style="@style/CalcButton"/>
+
+        <!-- Row 2 -->
+        <Button android:id="@+id/btn_4" android:text="4" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_5" android:text="5" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_6" android:text="6" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_multiply" android:text="*" style="@style/CalcButton"/>
+
+        <!-- Row 3 -->
+        <Button android:id="@+id/btn_1" android:text="1" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_2" android:text="2" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_3" android:text="3" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_minus" android:text="-" style="@style/CalcButton"/>
+
+        <!-- Row 4 -->
+        <Button android:id="@+id/btn_0" android:text="0" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_dot" android:text="." style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_clear" android:text="C" style="@style/CalcButton"/>
+        <Button android:id="@+id/btn_plus" android:text="+" style="@style/CalcButton"/>
+
+        <!-- Row 5 -->
+        <Button
+            android:id="@+id/btn_equals"
+            android:text="="
+            android:layout_columnSpan="4"
+            style="@style/CalcButton"
+            android:background="#ff9800"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+    </GridLayout>
+
 </RelativeLayout>
