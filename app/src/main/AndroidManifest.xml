@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrisonPay">
 
-        <!-- Launches CalculatorActivity first -->
+        <!-- Splash screen launches first -->
         <activity
-            android:name=".CalculatorActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +20,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Main app screen, unlocked from calculator -->
-        <activity android:name=".MainActivity" android:exported="true" />
+        <!-- Calculator screen shown after splash -->
+        <activity android:name=".CalculatorActivity" />
 
+        <!-- Main app interface unlocked after 187÷69 -->
+        <activity android:name=".MainActivity" />
+        
     </application>
 
 </manifest>
-
