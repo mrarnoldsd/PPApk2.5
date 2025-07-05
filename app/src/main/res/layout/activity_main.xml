@@ -1,9 +1,57 @@
-<Button
-    android:id="@+id/btn_open_sales"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="🧾 Put in Work"
-    android:textAllCaps="false"
-    android:backgroundTint="#FF9800"
-    android:textColor="#000000"
-    android:layout_marginTop="16dp" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/brick_background"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/calculator_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        android:background="#222222"
+        android:padding="16dp"
+        android:gravity="end"
+        android:text="0"
+        android:fontFamily="monospace" />
+
+    <GridLayout
+        android:id="@+id/calculator_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnCount="4"
+        android:rowCount="5">
+
+        <!-- Row 1 -->
+        <Button style="@style/UrbanCalcButton" android:text="7" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="8" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="9" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="/" android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 2 -->
+        <Button style="@style/UrbanCalcButton" android:text="4" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="5" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="6" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="*" android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 3 -->
+        <Button style="@style/UrbanCalcButton" android:text="1" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="2" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="3" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="-" android:onClick="onCalculatorButtonClick" />
+
+        <!-- Row 4 -->
+        <Button style="@style/UrbanCalcButton" android:text="0" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="C" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="=" android:onClick="onCalculatorButtonClick" />
+        <Button style="@style/UrbanCalcButton" android:text="+" android:onClick="onCalculatorButtonClick" />
+
+    </GridLayout>
+</LinearLayout>
