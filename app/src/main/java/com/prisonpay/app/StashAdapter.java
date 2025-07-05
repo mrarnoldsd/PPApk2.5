@@ -40,9 +40,12 @@ public class StashAdapter extends RecyclerView.Adapter<StashAdapter.StashViewHol
     @Override
     public void onBindViewHolder(@NonNull StashViewHolder holder, int position) {
         Product product = productList.get(position);
+
         holder.name.setText("💼 " + product.getName());
         holder.price.setText("💸 $" + product.getPrice());
         holder.stock.setText("🔐 Left in the Safe: " + product.getStock());
+        holder.roi.setText(String.format("📈 Come Up %%: %.1f%%", product.getROI()));
+        holder.revenue.setText(String.format("📊 Trap Earnings: $%.2f", product.getRevenue()));
 
         holder.itemView.setOnClickListener(v -> {
             if (clickListener != null) {
@@ -57,13 +60,15 @@ public class StashAdapter extends RecyclerView.Adapter<StashAdapter.StashViewHol
     }
 
     static class StashViewHolder extends RecyclerView.ViewHolder {
-        TextView name, price, stock;
+        TextView name, price, stock, roi, revenue;
 
         public StashViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.pack_name);
             price = itemView.findViewById(R.id.pack_price);
             stock = itemView.findViewById(R.id.pack_stock);
+            roi = itemView.findViewById(R.id.pack_roi);
+            revenue = itemView.findViewById(R.id.pack_revenue);
         }
     }
 }
