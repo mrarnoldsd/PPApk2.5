@@ -11,8 +11,18 @@ public class Product {
         // Needed for Firebase
     }
 
+    // ✅ Constructor with ID (used when ID is already known)
     public Product(String id, String name, double cost, double price, int stock) {
         this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    // ✅ NEW Constructor added for creating product without ID
+    public Product(String name, double cost, double price, int stock) {
+        this.id = ""; // ID can be generated later
         this.name = name;
         this.cost = cost;
         this.price = price;
