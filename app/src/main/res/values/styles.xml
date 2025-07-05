@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base app theme -->
     <style name="Theme.PrisonPay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Branding Colors -->
         <item name="colorPrimary">#000000</item>
-        <item name="colorPrimaryVariant">#1A1A1A</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#B71C1C</item> <!-- Blood red accent -->
+        <item name="colorPrimaryVariant">#1c1c1c</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="colorSecondary">#ff9800</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- App background -->
         <item name="android:windowBackground">@drawable/splash_background_v2</item>
-        <item name="android:statusBarColor">#000000</item>
-        <item name="android:navigationBarColor">#000000</item>
-        <item name="android:fontFamily">@font/roboto</item>
+
+        <!-- Font Colors -->
+        <item name="android:textColor">#ffffff</item>
     </style>
 
-    <!-- Theme used ONLY for splash screen (optional fallback) -->
-    <style name="Theme.PrisonPay.Splash" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:windowBackground">@drawable/splash_background_v2</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
+    <!-- Style for calculator buttons -->
+    <style name="CalcButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#222222</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">monospace</item>
     </style>
 
 </resources>
