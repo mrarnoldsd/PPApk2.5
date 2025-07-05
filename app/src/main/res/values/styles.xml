@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Main PrisonPay App Theme -->
+    <!-- Base app theme -->
     <style name="Theme.PrisonPay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Branding colors -->
+        <!-- Branding Colors -->
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryVariant">#1c1c1c</item>
         <item name="colorOnPrimary">#ffffff</item>
@@ -12,3 +12,9 @@
 
         <!-- App background -->
         <item name="android:windowBackground">@drawable/brick_background</item>
+
+        <!-- Font Colors -->
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+</resources>
