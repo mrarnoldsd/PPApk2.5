@@ -8,11 +8,11 @@
         <item name="colorOnPrimary">#ffffff</item>
         <item name="colorSecondary">#ff9800</item>
         <item name="colorOnSecondary">#000000</item>
-        <item name="android:windowBackground">@drawable/red_brick_background</item>
+        <item name="android:windowBackground">@drawable/brick_background</item>
         <item name="android:textColor">#ffffff</item>
     </style>
 
-    <!-- 🔥 Custom Style for Calculator Buttons -->
+    <!-- 🔥 Urban Style Calculator Buttons -->
     <style name="UrbanCalcButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
