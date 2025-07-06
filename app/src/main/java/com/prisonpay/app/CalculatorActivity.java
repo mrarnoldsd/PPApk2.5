@@ -52,4 +52,38 @@ public class CalculatorActivity extends AppCompatActivity {
             double result = simpleEval(expression);
             display.setText(String.valueOf(result));
             currentExpression.setLength(0);
-            currentExpression.append
+            currentExpression.append(result);
+        } catch (Exception e) {
+            display.setText("Error");
+            currentExpression.setLength(0);
+        }
+    }
+
+    private double simpleEval(String expr) {
+        String[] tokens = expr.split("(?<=[-+*/])|(?=[-+*/])");
+        double result = Double.parseDouble(tokens[0].trim());
+
+        for (int i = 1; i < tokens.length; i += 2) {
+            String op = tokens[i].trim();
+            double next = Double.parseDouble(tokens[i + 1].trim());
+
+            switch (op) {
+                case "+":
+                    result += next;
+                    break;
+                case "-":
+                    result -= next;
+                    break;
+                case "*":
+                    result *= next;
+                    break;
+                case "/":
+                    result /= next;
+                    break;
+                default:
+                    throw new RuntimeException("Invalid operator");
+            }
+        }
+        return result;
+    }
+}
