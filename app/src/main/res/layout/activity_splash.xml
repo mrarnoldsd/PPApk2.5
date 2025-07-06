@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background"
+    android:background="@drawable/splash_background_v2"
     android:gravity="center">
 
     <!-- 🔒 Logo with bars -->
@@ -10,7 +10,7 @@
         android:id="@+id/splash_logo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/prison_logo"
+        android:src="@drawable/prisonpay_logo"
         android:contentDescription="PrisonPay Logo"
         android:scaleType="fitCenter" />
 
