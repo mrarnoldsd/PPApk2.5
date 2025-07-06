@@ -21,11 +21,35 @@ public class CalculatorActivity extends AppCompatActivity {
         display = findViewById(R.id.calculator_display);
     }
 
-    // ✅ Method name now matches XML onClick
     public void onCalculatorButtonClick(View v) {
         Button button = (Button) v;
         String input = button.getText().toString();
 
         switch (input) {
             case "C":
-                currentExpression.setLength(0
+                currentExpression.setLength(0);
+                display.setText("");
+                break;
+            case "=":
+                evaluateExpression();
+                break;
+            default:
+                currentExpression.append(input);
+                display.setText(currentExpression.toString());
+        }
+    }
+
+    private void evaluateExpression() {
+        String expression = currentExpression.toString().replace("×", "*").replace("÷", "/");
+
+        if (expression.equals(unlockCode)) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
+        try {
+            double result = simpleEval(expression);
+            display.setText(String.valueOf(result));
+            currentExpression.setLength(0);
+            currentExpression.append
